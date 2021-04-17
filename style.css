@@ -48,6 +48,10 @@ nav .container {
     margin-left: 35px; 
 }
 
+#nav-links li:first-child a {
+    margin-left: 0;
+}
+
 #nav-links li a:hover {
     border-bottom: 2px solid white;
 }
@@ -109,19 +113,20 @@ nav .container {
 .showcase::after {
     content: '';
     position: absolute;
-    height: 100px;
+    height: 130px;
     background-color: white;
     right: 0;
     left: 0;
-    bottom: -0px;
+    bottom: -20px;
     transform: skewY(-3deg);
 }
 
 /* Stats */
 
 .stats {
-    margin-top: 150px;
+    margin-top: 120px;
     text-align: center;
+    z-index: 2;
 }
 
 .stats h3 {
@@ -155,6 +160,7 @@ nav .container {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    margin-bottom: 35px;
 }
 
 .cli img {
@@ -205,9 +211,10 @@ nav .container {
 
 .cloud img {
     width: 100%;
+    
 }
 
-/* Language */
+/* Languages */
 .languages {
 text-align: center;
 }
@@ -229,6 +236,11 @@ text-align: center;
     margin: 10px 10px 40px;;
     box-shadow: 0 3px 10px lightgray;
     border-radius: 10px;
+    transition: transform ease-in .2s;
+}
+
+.lang-card:hover {
+    transform: translateY(-15px);
 }
 
 /* Footer */
@@ -257,4 +269,78 @@ footer li {
 
 footer i {
     margin-left: 22px;
+}
+
+footer a:first-child i{
+    margin-left: 0;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 760px) {
+    header {
+        height: auto;
+    }
+    
+    .showcase .container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .showcase-left {
+        margin-bottom: 60px;
+    }
+
+    .showcase form {
+        width: 400px;
+    }
+
+    .stats {
+        margin-top: 30px;
+    }
+
+    .stats-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cli .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cloud .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 25px;
+        height: auto;
+        padding: 30px;
+    }
+
+    footer .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 25px;
+        height: auto;
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav .container {
+        flex-direction: column;
+    }
+
+    #nav-links {
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .showcase form {
+        width: 300px;
+    }
+
 }
